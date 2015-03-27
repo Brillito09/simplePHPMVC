@@ -50,6 +50,24 @@
         case "empresa":
             require_once("controllers/mnt/empresa.control.php");
             break;
+        case "tipomateriales":
+            require_once("controllers/mnt/tipomateriales.control.php");
+            break;
+        case "tipomaterial":
+            require_once("controllers/mnt/tipomaterial.control.php");
+            break;
+        case "tipoalmacenes":
+            require_once("controllers/mnt/tipoalmacenes.control.php");
+            break;
+        case "tipoalmacen":
+            require_once("controllers/mnt/tipoalmacen.control.php");
+            break;
+        case "almacenes":
+            require_once("controllers/mnt/almacenes.control.php");
+            break;
+        case "almacen":
+            require_once("controllers/mnt/almacen.control.php");
+            break;
         default:
             require_once("controllers/error.control.php");
 
