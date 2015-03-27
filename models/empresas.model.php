@@ -28,7 +28,7 @@
   `empctc` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `emptip` char(3) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`empresaId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
     */
@@ -49,6 +49,14 @@
       $sqlstr = sprintf($sqlstr, $EmpresaID);
       $Empresa = obtenerUnRegistro($sqlstr);
       return $Empresa;
+    }
+    
+    function sePuedeBorrar($EmpresaID){
+        $EmpresaID = array();
+      $sqlstr = "select * from almacenes where empresaId = %d;";
+      $sqlstr = sprintf($sqlstr, $EmpresaID);
+      $EmpresaID = obtenerUnRegistro($sqlstr);
+      return $EmpresaID;
     }
 
     function insertarEmpresa($Empresa){
@@ -97,7 +105,7 @@
 
     function borrarEmpresa($EmpresaID){
       if($EmpresaID){
-        $sqlDelete = "delete from Empresa where empresaid=%d;";
+        $sqlDelete = "delete from empresa where empresaid=%d;";
         $sqlDelete = sprintf($sqlDelete,
                       valstr($EmpresaID)
                     );
